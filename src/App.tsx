@@ -21,8 +21,11 @@ function App() {
     setSelectedShape(event.target.value);
   }
 
-  function handleChangeColor(event: React.ChangeEvent<HTMLInputElement>) {
-    setColor(event.target.value);
+  function handleChangeColor(event: React.MouseEvent<HTMLDivElement>) {
+    const div = event.target as HTMLDivElement;
+    const computedStyle = window.getComputedStyle(div);
+    const color = computedStyle.getPropertyValue("background-color");
+    setColor(color);
   }
 
   function handlePlaceShape(event: React.MouseEvent<HTMLDivElement>) {
@@ -75,7 +78,7 @@ function App() {
 
         <div className="option-grp">
           <div className="option__item">
-            <span>Forme : </span>
+            <span>Forme</span>
             <select
               id="shapeType"
               onChange={handleChangeShape}
@@ -86,18 +89,14 @@ function App() {
             </select>
           </div>
           <div className="option__item">
-            <span>Couleur :</span>
-            <input
-              className="color-picker"
-              onChange={handleChangeColor}
-              type="color"
-              name="color"
-              id="color"
-              value={color}
-            />
+            <span>Couleur</span>
+            <div className="clr-wrapper">
+              <div onClick={handleChangeColor} className={`clr clr-1`}></div>
+              <div onClick={handleChangeColor} className="clr clr-2"></div>
+            </div>
           </div>
           <div className="option__item">
-            <span>Épaisseur :</span>
+            <span>Épaisseur</span>
             <input
               className="number"
               onChange={handleBorderWidth}

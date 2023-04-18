@@ -9,11 +9,12 @@
   --clr-headline: #fffffe;
 
   /* fonts size */
-
-  --fs--xl: 3rem;
-  --fs--l: 1.7rem;
-  --fs--m: 1rem;
-  --fs--s: 0.8rem;
+  --fs-3xl: 3rem;
+  --fs-2xl: 2.4rem;
+  --fs-xl: 1.7rem;
+  --fs-l: 1.4rem;
+  --fs-m: 1rem;
+  --fs-s: 0.8rem;
 
   /* fonts weigth */
 
@@ -35,13 +36,14 @@ body {
 
 h1 {
   color: var(--clr-headline);
-  font-size: var(--fs--xl);
+  font-size: var(--fs-3xl);
   font-weight: var(--fw-semi-bold);
+  text-align: center;
 }
 
 h2 {
   color: var(--clr-headline);
-  font-size: var(--fs--l);
+  font-size: var(--fs-xl);
   font-weight: var(--fw-reg);
   text-align: center;
 }
@@ -99,11 +101,10 @@ main {
 }
 
 .option-grp {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 60px;
-  margin-block: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-bottom: 30px;
+  gap: 10px;
 }
 
 .option__item {
@@ -118,23 +119,40 @@ main {
   justify-content: center;
   align-items: center;
   gap: 30px;
+  margin-bottom: 10px;
 }
 
 select {
   height: 2rem;
+  width: 4rem;
   border-radius: 5px;
 }
-.color-picker {
-  appearance: none;
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-  height: 3rem;
-  padding: 0;
-  width: 3rem;
-  border-radius: 10px;
+
+.clr-wrapper {
+  display: flex;
+  gap: 5px;
+}
+
+.clr {
+  border-radius: 9999px;
+  height: 2rem;
+  width: 2rem;
+}
+
+.clr:hover {
+  opacity: 0.5;
+}
+
+.clr:active {
+  scale: 1.1;
+}
+
+.clr-1 {
+  background-color: var(--clr-bg-button);
+}
+
+.clr-2 {
+  background-color: var(--clr-paragraph);
 }
 
 .number {
@@ -143,11 +161,11 @@ select {
   border-radius: 5px;
   outline: none;
   text-align: center;
-  width: 5rem;
+  width: 4rem;
 }
 .drawing-area {
   margin-top: 5px;
-  width: 70%;
+  width: 80%;
   height: 300px;
   position: relative;
   background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='14' ry='14' stroke='white' stroke-width='3' stroke-dasharray='24' stroke-dashoffset='20' stroke-linecap='round'/%3e%3c/svg%3e");
@@ -168,4 +186,18 @@ select {
 
 .square {
   border-radius: 0px;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: var(--fs-2xl);
+  }
+
+  h2 {
+    font-size: var(--fs-l);
+  }
+  .option__item {
+    flex-direction: column;
+  }
 }
