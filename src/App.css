@@ -1,0 +1,171 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap");
+
+:root {
+  /* Colors */
+  --clr-bg: #55423d;
+  --clr-bg-button: #ffc0ad;
+  --clr-bg-button-text: #271c19;
+  --clr-paragraph: #fff3ec;
+  --clr-headline: #fffffe;
+
+  /* fonts size */
+
+  --fs--xl: 3rem;
+  --fs--l: 1.7rem;
+  --fs--m: 1rem;
+  --fs--s: 0.8rem;
+
+  /* fonts weigth */
+
+  --fw-semi-bold: 700;
+  --fw-reg: 400;
+}
+
+/* General */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--clr-bg);
+  font-family: "Nunito", sans-serif;
+  font-weight: var(--fw-reg);
+}
+
+h1 {
+  color: var(--clr-headline);
+  font-size: var(--fs--xl);
+  font-weight: var(--fw-semi-bold);
+}
+
+h2 {
+  color: var(--clr-headline);
+  font-size: var(--fs--l);
+  font-weight: var(--fw-reg);
+  text-align: center;
+}
+
+p {
+  color: var(--clr-paragraph);
+}
+
+button {
+  background-color: var(--clr-bg-button);
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  padding: 0.4em;
+  height: 40px;
+  min-width: 5rem;
+}
+
+.icon {
+  opacity: 20%;
+}
+
+.icon--enabled {
+  opacity: 100%;
+}
+.icon--enabled:hover {
+  opacity: 80%;
+}
+
+.icon--enabled:active {
+  scale: 1.1;
+}
+
+/* Utils */
+
+/* Header */
+
+header {
+  max-width: 1024px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Main */
+
+main {
+  max-width: 1024px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 100%;
+}
+
+.option-grp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  margin-block: 40px;
+}
+
+.option__item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--clr-paragraph);
+}
+
+.edit-grp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+select {
+  height: 2rem;
+  border-radius: 5px;
+}
+.color-picker {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  height: 3rem;
+  padding: 0;
+  width: 3rem;
+  border-radius: 10px;
+}
+
+.number {
+  height: 2rem;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  text-align: center;
+  width: 5rem;
+}
+.drawing-area {
+  margin-top: 5px;
+  width: 70%;
+  height: 300px;
+  position: relative;
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='14' ry='14' stroke='white' stroke-width='3' stroke-dasharray='24' stroke-dashoffset='20' stroke-linecap='round'/%3e%3c/svg%3e");
+  overflow: hidden;
+}
+
+.shape {
+  display: inline-block;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: solid;
+}
+
+.circle {
+  border-radius: 99999px;
+}
+
+.square {
+  border-radius: 0px;
+}
